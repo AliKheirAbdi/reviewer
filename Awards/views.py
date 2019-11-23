@@ -92,3 +92,10 @@ def search_projects(request):
             "message":message,
         }
         return render(request, 'search.html', context)
+
+
+class ProjectList(APIView):
+    def get(self, request, format=None):
+        allprojects = Projects.objects.all()
+        serializers = ProjectSerializer(allprojects, many=True)
+        return Response(serializers.data)
