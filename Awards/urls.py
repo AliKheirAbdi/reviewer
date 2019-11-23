@@ -11,9 +11,9 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('new-project/', views.postproject, name='newproject'),
     path('project/<id>', views.get_project, name='project'),
-
-
-
+    path('search', views.search_projects, name='search'),
+    path('api/projects', views.ProjectList.as_view()),
+    path('api/profiles', views.ProfileList.as_view())
 
 ]
 if settings.DEBUG:
