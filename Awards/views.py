@@ -11,3 +11,17 @@ def home(request):
         "projects":projects,
     }
     return render(request, 'home.html', context)
+
+def registration(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            form.save()
+            return redirect('/login')
+    else:
+        form = RegisterForm()
+    context = {
+        'form':form,
+    }
+    return render(request, 'users/register.html', context)
