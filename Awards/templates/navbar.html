@@ -11,11 +11,11 @@
             </a>
       </div>
       <!-- Collapse button -->
-      <button class="navbar-toggler bg-info text-white" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-        <!-- <span class="navbar-toggler-icon"></span> -->
-        Menu
-      </button>
+          <button class="navbar-toggler bg-info text-white" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            Menu
+          </button>
 
       <!-- Collapsible content -->
       <div class="collapse navbar-collapse" id="basicExampleNav">
@@ -23,18 +23,20 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto text-white">
           {% if user.is_authenticated %}
-          <div class="dropdown">
-              <button class="btn btn-green dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               My Account
-              </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-                  </div>
-          </div>
+
           <div class=" mt-2 btn btn-green btn-sm ml-2">
             <li class="nav-item ml-2 ">
-              <a class="nav-link text-light" href="{% url 'newproject' %}" style="font-weight:bold"><h7>SUBMIT PROJECT</h7></a>
+              <a class="nav-link text-light" href="{% url 'newproject' %}" style="font-weight:bold"><h6>Share Project</h6></a>
+            </li>
+          </div>
+            <div class=" mt-2 btn btn-orange btn-sm ml-2">
+            <li class="nav-item ml-2 ">
+              <a class="nav-link text-light" href="{% url 'profile' %}" style="font-weight:bold"><h6>My Profile</h6></a>
+            </li>
+          </div>
+            <div class=" mt-2 btn btn-red btn-sm ml-2">
+            <li class="nav-item ml-2 ">
+              <a class="nav-link text-light" href="{% url 'logout' %}" style="font-weight:bold"><h6>Logout</h6></a>
             </li>
           </div>
           {% else %}
@@ -53,7 +55,7 @@
         <!-- Links -->
 
 
-      <ul class="navbar-nav">
+
             <div class="btn btn-green -sm">
               <form class="navbar-form navbar-left" action="{% url 'search' %}">
                   <div class="input-group">
@@ -61,12 +63,10 @@
                       <button class="btn btn-sm" type="submit">
                         <i class="glyphicon glyphicon-search"></i>
                       </button>
-                    </div>
                   </div>
                 </form>
-        </div>
-      </ul>
-      </div>
+             </div>
+
       <!-- Collapsible content -->
 
     </nav>

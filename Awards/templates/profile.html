@@ -3,36 +3,45 @@
 {% load crispy_forms_tags %}
 
     {% block content %}
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-          </div>
-          <div class="col-md-4">
-                <img class="rounded-circle account-profile " src="{{ user.profile.image.url }}" alt="user" height="120px" width="120px">
-                <div class="media-container mt-3">
-                  <h2 class="account-header ml-5">{{user.username}}</h2>
-                  <p class="text-info">{{user.email}}</p>
+        <br><br><br>
+
+          <div class="container">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-3">
+                                  <img class="rounded-circle account-profile " src="{{ user.profile.image.url }}" alt="userpic" height="110px" width="110px">
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>
+                                       {{user.username}}
+                                    </h4>
+                                        <i class="glyphicon glyphicon-envelope; text-info">{{user.email}}</i><br>
+                                    <span>
+                                        <a class="btn btn-blue" href="{% url 'updateprofile' %}">Update Profile</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="ml-3">{{user.profile.bio}}</p>
-                <a class="btn btn-info" href="{% url 'updateprofile' %}">Update Profile</a>
+            </div><br><br>
 
-          </div>
-        </div>
-
+            <h3 style="text-align:center; font-weight:bold">Your Projects</h3>
         <div class="row mt-5">
-              <div class="col-md-4">
+              <div class="col-md-3">
 
-              </div>
-              <div class="col-md-4 text-center mt-5">
-                <h2 class="text-info text-uppercase">My Projects</h2>
-                <hr>
               </div>
               {% for project in projects %}
                   {% if project.author == user %}
-                    <div class="col-md-4">
-                      <img class="w-100 mt-3 " src="{{project.image.url}}" alt="image">
 
+                <div class="card-deck">
+                  <div class="card" style="width: 18rem; height: 11rem">
+                      <div class="view overlay zoom">
+                        <a href="{{project_item.id}}">
+                        <img class="card-img-top" src="{{project.image.url}}" height="300px" hspace="20"><br><br>
+                        </a>
+                      </div>
                     </div>
+                </div>
                   {% endif %}
               {% endfor %}
           </div>
