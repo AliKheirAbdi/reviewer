@@ -1,5 +1,5 @@
 # Reviewer
-This is a clone AWWARDS website which recognize and promote the talent and effort of the best developers, designers and web agencies in the world.
+This is a clone of AWWARDS website which recognize and promote the talent and effort of the best developers, designers and web agencies in the world.
 
 ## Screenshots 
 ###### Home page
