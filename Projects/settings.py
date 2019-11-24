@@ -145,6 +145,7 @@ LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'home'
 
+STAR_RATINGS_RANGE = 10
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
